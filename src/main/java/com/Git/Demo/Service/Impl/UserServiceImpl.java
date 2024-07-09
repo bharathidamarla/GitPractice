@@ -1,5 +1,7 @@
 package com.Git.Demo.Service.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,15 @@ public class UserServiceImpl implements UserService {
 		userRepository.save(user);
 
 		return new ResponseEntity<>("User Saved Successfully", HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<?> getAllUsers() {
+
+		List<User> findAll = userRepository.findAll();
+
+		return new ResponseEntity<>(findAll, HttpStatus.OK);
+
 	}
 
 }

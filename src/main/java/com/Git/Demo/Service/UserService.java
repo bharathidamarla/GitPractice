@@ -8,4 +8,6 @@ public interface UserService {
 
 	ResponseEntity<?> createUser(UserReqDto userReqDto);
  	
+	ResponseEntity<?> getAllUsers();
+
 }
